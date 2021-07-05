@@ -1,0 +1,22 @@
+service: layerstickets
+# frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: 20201221
+  environment:
+    DB_DIALECT: mariadb
+    DB_NAME: tickets
+    DB_USERNAME: admin
+    DB_PASSWORD: 123456789
+    DB_HOST: tickets.cwly68t8cxnd.us-east-2.rds.amazonaws.com
+    DB_PORT: 3306
+
+layers:
+  CommonModelsDb:
+    path: layersCommonModelsDb
+
+functions:
+  hello:
+    handler: handler.hello
