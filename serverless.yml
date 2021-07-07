@@ -4,7 +4,9 @@ service: layerstickets
 provider:
   name: aws
   runtime: nodejs14.x
+  stage: dev
   lambdaHashingVersion: 20201221
+  region: us-east-2
   environment:
     DB_DIALECT: mariadb
     DB_NAME: tickets
